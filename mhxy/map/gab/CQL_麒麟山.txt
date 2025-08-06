@@ -1,0 +1,18 @@
+// 创建麒麟山节点
+CREATE (qls:Location {name: '麒麟山'})
+
+// 创建朱紫国节点
+CREATE (zzg:Location {name: '朱紫国'})
+
+// 连接麒麟山到朱紫国
+CREATE (qls)-[:连接]->(zzg)
+
+// 创建 NPC 节点并与麒麟山连接
+CREATE (npc5:NPC {name: '有来有去', location: '111,109'})
+CREATE (npc6:NPC {name: '布识陆', location: '168,84'})
+CREATE (npc7:NPC {name: '超级巫医', location: '99,62'})
+
+// 建立NPC与麒麟山的包含关系
+CREATE (qls)-[:包含]->(npc5)
+CREATE (qls)-[:包含]->(npc6)
+CREATE (qls)-[:包含]->(npc7)

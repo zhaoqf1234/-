@@ -1,0 +1,24 @@
+// 创建蓬莱仙岛节点
+CREATE (plxd:Location {name: '蓬莱仙岛'})
+
+// 创建傲来国节点
+CREATE (alg:Location {name: '傲来国'})
+
+// 连接蓬莱仙岛到傲来国
+CREATE (plxd)-[:连接]->(alg)
+
+// 创建 NPC 节点并与蓬莱仙岛连接
+CREATE (npc1:NPC {name: '福星', location: '45,129'})
+CREATE (npc2:NPC {name: '禄星', location: '34,127'})
+CREATE (npc3:NPC {name: '桃花令使', location: '79,12'})
+CREATE (npc4:NPC {name: '道童', location: '157,116'})
+CREATE (npc5:NPC {name: '琴童', location: '79,116'})
+CREATE (npc6:NPC {name: '超级巫医', location: '137,64'})
+
+// 将NPC与蓬莱仙岛建立包含关系
+CREATE (plxd)-[:包含]->(npc1)
+CREATE (plxd)-[:包含]->(npc2)
+CREATE (plxd)-[:包含]->(npc3)
+CREATE (plxd)-[:包含]->(npc4)
+CREATE (plxd)-[:包含]->(npc5)
+CREATE (plxd)-[:包含]->(npc6)

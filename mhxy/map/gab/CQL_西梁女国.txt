@@ -1,0 +1,52 @@
+// 创建西梁女国节点
+CREATE (xlng:Location {name: '西梁女国'})
+
+// 创建子母河和朱紫国节点
+CREATE (zmh:Location {name: '子母河'})
+CREATE (zzg:Location {name: '朱紫国'})
+
+// 连接西梁女国到子母河和朱紫国
+CREATE (xlng)-[:连接]->(zmh)
+CREATE (xlng)-[:连接]->(zzg)
+
+// 创建 NPC 节点并与西梁女国连接
+CREATE (npc1:NPC {name: '西梁国王', location: '21,103'})
+CREATE (npc2:NPC {name: '上官丞相', location: '64,17'})
+CREATE (npc3:NPC {name: '宁小倩', location: '59,20'})
+CREATE (npc4:NPC {name: '药店老板娘', location: '138,62'})
+CREATE (npc5:NPC {name: '驿站老板', location: '23,54'})
+CREATE (npc6:NPC {name: '西门将军', location: '38,97'})
+CREATE (npc7:NPC {name: '西梁女兵', location: '130,18'})
+CREATE (npc8:NPC {name: '西梁女兵', location: '143,24'})
+CREATE (npc9:NPC {name: '挂毯店老板娘', location: '68,6'})
+CREATE (npc10:NPC {name: '西梁女兵', location: '13,99'})
+CREATE (npc11:NPC {name: '西梁女兵', location: '27,106'})
+
+// 创建七窍玲珑阵石头节点
+CREATE (stone1:NPC {name: '七窍玲珑阵石头', location: '110,111'})
+CREATE (stone2:NPC {name: '七窍玲珑阵石头', location: '116,103'})
+CREATE (stone3:NPC {name: '七窍玲珑阵石头', location: '127,102'})
+CREATE (stone4:NPC {name: '七窍玲珑阵石头', location: '122,108'})
+CREATE (stone5:NPC {name: '七窍玲珑阵石头', location: '131,118'})
+CREATE (stone6:NPC {name: '七窍玲珑阵石头', location: '140,105'})
+CREATE (stone7:NPC {name: '七窍玲珑阵石头', location: '147,110'})
+
+// 将所有NPC与西梁女国建立关系
+CREATE (xlng)-[:包含]->(npc1)
+CREATE (xlng)-[:包含]->(npc2)
+CREATE (xlng)-[:包含]->(npc3)
+CREATE (xlng)-[:包含]->(npc4)
+CREATE (xlng)-[:包含]->(npc5)
+CREATE (xlng)-[:包含]->(npc6)
+CREATE (xlng)-[:包含]->(npc7)
+CREATE (xlng)-[:包含]->(npc8)
+CREATE (xlng)-[:包含]->(npc9)
+CREATE (xlng)-[:包含]->(npc10)
+CREATE (xlng)-[:包含]->(npc11)
+CREATE (xlng)-[:包含]->(stone1)
+CREATE (xlng)-[:包含]->(stone2)
+CREATE (xlng)-[:包含]->(stone3)
+CREATE (xlng)-[:包含]->(stone4)
+CREATE (xlng)-[:包含]->(stone5)
+CREATE (xlng)-[:包含]->(stone6)
+CREATE (xlng)-[:包含]->(stone7)

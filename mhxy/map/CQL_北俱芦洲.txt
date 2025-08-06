@@ -1,0 +1,44 @@
+// 创建北俱芦洲节点
+MERGE (bjlz:Location {name: '北俱芦洲'})
+
+// 创建连接的地图节点
+MERGE (cac:Location {name: '长安城'})
+MERGE (csjw:Location {name: '长寿郊外'})
+MERGE (hgs:Location {name: '花果山'})
+
+// 连接北俱芦洲到其他地图
+CREATE (bjlz)-[:连接]->(cac)
+CREATE (bjlz)-[:连接]->(csjw)
+CREATE (bjlz)-[:连接]->(hgs)
+
+// 创建NPC节点并与北俱芦洲建立包含关系
+CREATE (npc1:NPC {name: '北俱芦洲土地', location: '195,105'})
+CREATE (npc2:NPC {name: '地遁鬼', location: '195,5'})
+CREATE (npc3:NPC {name: '驿站老板', location: '47,119'})
+CREATE (npc4:NPC {name: '北俱商人', location: '168,39'})
+CREATE (npc5:NPC {name: '北俱货商', location: '161,118'})
+CREATE (npc6:NPC {name: '江湖奸商', location: '106,110'})
+CREATE (npc7:NPC {name: '龙女妹妹', location: '133,98'})
+CREATE (npc8:NPC {name: '雷鸟精', location: '67,140'})
+CREATE (npc9:NPC {name: '莽汉', location: '34,30'})
+CREATE (npc10:NPC {name: '青琉璃', location: '204,133'})
+CREATE (npc11:NPC {name: '翻天怪', location: '135,35'})
+CREATE (npc12:NPC {name: '白熊怪', location: '186,82'})
+CREATE (npc13:NPC {name: '超级巫医', location: '21,59'})
+CREATE (npc14:NPC {name: '传送女娲', location: '14,156'})
+
+// 建立北俱芦洲与所有NPC的包含关系
+CREATE (bjlz)-[:包含]->(npc1)
+CREATE (bjlz)-[:包含]->(npc2)
+CREATE (bjlz)-[:包含]->(npc3)
+CREATE (bjlz)-[:包含]->(npc4)
+CREATE (bjlz)-[:包含]->(npc5)
+CREATE (bjlz)-[:包含]->(npc6)
+CREATE (bjlz)-[:包含]->(npc7)
+CREATE (bjlz)-[:包含]->(npc8)
+CREATE (bjlz)-[:包含]->(npc9)
+CREATE (bjlz)-[:包含]->(npc10)
+CREATE (bjlz)-[:包含]->(npc11)
+CREATE (bjlz)-[:包含]->(npc12)
+CREATE (bjlz)-[:包含]->(npc13)
+CREATE (bjlz)-[:包含]->(npc14)

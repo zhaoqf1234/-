@@ -1,0 +1,38 @@
+// 创建朱紫国节点
+MERGE (zzg:Location {name: '朱紫国'})
+
+// 创建连接的地图节点
+MERGE (dtjw:Location {name: '大唐境外'})
+MERGE (xlnz:Location {name: '西梁女国'})
+MERGE (qls:Location {name: '麒麟山'})
+
+// 连接朱紫国到其他地图
+CREATE (zzg)-[:连接]->(dtjw)
+CREATE (zzg)-[:连接]->(xlnz)
+CREATE (zzg)-[:连接]->(qls)
+
+// 创建NPC节点并与朱紫国连接
+CREATE (npc1:NPC {name: '朱紫校尉', location: '139,99'})
+CREATE (npc2:NPC {name: '朱紫侍卫', location: '81,11'})
+CREATE (npc3:NPC {name: '朱紫侍卫', location: '22,4'})
+CREATE (npc4:NPC {name: '紫阳药师', location: '145,37'})
+CREATE (npc5:NPC {name: '药店伙计', location: '127,23'})
+CREATE (npc6:NPC {name: '酒店伙计', location: '34,38'})
+CREATE (npc7:NPC {name: '超级巫医', location: '8,88'})
+CREATE (npc8:NPC {name: '申太公', location: '74,14'})
+CREATE (npc9:NPC {name: '端木娘子', location: '97,7'})
+CREATE (npc10:NPC {name: '豆蔻囡囡', location: '150,6'})
+CREATE (npc11:NPC {name: '小囝囝', location: '153,4'})
+
+// 建立朱紫国与所有NPC的"包含"关系
+CREATE (zzg)-[:包含]->(npc1)
+CREATE (zzg)-[:包含]->(npc2)
+CREATE (zzg)-[:包含]->(npc3)
+CREATE (zzg)-[:包含]->(npc4)
+CREATE (zzg)-[:包含]->(npc5)
+CREATE (zzg)-[:包含]->(npc6)
+CREATE (zzg)-[:包含]->(npc7)
+CREATE (zzg)-[:包含]->(npc8)
+CREATE (zzg)-[:包含]->(npc9)
+CREATE (zzg)-[:包含]->(npc10)
+CREATE (zzg)-[:包含]->(npc11)

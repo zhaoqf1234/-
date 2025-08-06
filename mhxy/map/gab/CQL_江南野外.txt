@@ -1,0 +1,23 @@
+// 创建江南野外节点
+CREATE (jn:Location {name: '江南野外'})
+
+// 创建已存在的建邺城节点(如果尚未创建)
+MERGE (jyc:Location {name: '建邺城'})
+// 创建长安城节点
+CREATE (ca:Location {name: '长安城'})
+
+// 连接江南野外到建邺城和长安城
+CREATE (jn)-[:连接]->(jyc)
+CREATE (jn)-[:连接]->(ca)
+
+// 创建 NPC 节点并与江南野外建立关系
+CREATE (npc1:NPC {name: '江湖奸商', location: '103,95'})
+CREATE (npc2:NPC {name: '罗纤纤', location: '22,90'})
+CREATE (npc3:NPC {name: '卵二姐', location: '32,21'})
+CREATE (npc4:NPC {name: '樵夫', location: '133,22'})
+
+// 将NPC与江南野外建立"包含"关系
+CREATE (jn)-[:包含]->(npc1)
+CREATE (jn)-[:包含]->(npc2)
+CREATE (jn)-[:包含]->(npc3)
+CREATE (jn)-[:包含]->(npc4)

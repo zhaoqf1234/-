@@ -1,0 +1,30 @@
+// 创建东海湾节点
+CREATE (dhw:Location {name: '东海湾'})
+
+// 创建东海岩洞和东海沉船节点并连接
+CREATE (dhyd:Location {name: '东海岩洞'})
+CREATE (dhcc:Location {name: '东海沉船'})
+CREATE (dhw)-[:连接]->(dhyd)
+CREATE (dhw)-[:连接]->(dhcc)
+
+// 创建NPC节点并与东海湾连接
+CREATE (npc1:NPC {name: '楚恋依', location: '53,81'})
+CREATE (npc2:NPC {name: '牛二', location: '60,48'})
+CREATE (npc3:NPC {name: '老虾', location: '113,88'})
+CREATE (npc4:NPC {name: '船夫', location: '62,19'})
+CREATE (npc5:NPC {name: '玉面公主', location: '92,111'})
+CREATE (npc6:NPC {name: '海盗头子', location: '21,18'})
+CREATE (npc7:NPC {name: '林老汉', location: '85,33'})
+CREATE (npc8:NPC {name: '蛤蟆怪', location: '海底沉船'})
+CREATE (npc9:NPC {name: '商人的鬼魂', location: '沉船内舱'})
+
+// 将NPC与东海湾建立包含关系
+CREATE (dhw)-[:包含]->(npc1)
+CREATE (dhw)-[:包含]->(npc2)
+CREATE (dhw)-[:包含]->(npc3)
+CREATE (dhw)-[:包含]->(npc4)
+CREATE (dhw)-[:包含]->(npc5)
+CREATE (dhw)-[:包含]->(npc6)
+CREATE (dhw)-[:包含]->(npc7)
+CREATE (dhw)-[:包含]->(npc8)
+CREATE (dhw)-[:包含]->(npc9)

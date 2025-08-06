@@ -1,0 +1,24 @@
+// 使用 MERGE 检查并创建 "女儿村" 节点，如果不存在则创建
+MERGE (nec:Location {name: '女儿村'})
+
+// 使用 MERGE 检查并创建 "傲来国" 节点，如果不存在则创建
+MERGE (alg:Location {name: '傲来国'})
+
+// 连接女儿村到傲来国
+CREATE (nec)-[:连接]->(alg)
+
+// 创建 NPC 节点并与女儿村连接
+CREATE (npc1:NPC {name: '传送女使', location: '21,125'})
+CREATE (npc2:NPC {name: '柳飞絮', location: '23,55'})
+CREATE (npc3:NPC {name: '翠花', location: '75,45'})
+CREATE (npc4:NPC {name: '栗栗娘', location: '105,86'})
+CREATE (npc5:NPC {name: '绿儿', location: '82,70'})
+CREATE (npc6:NPC {name: '孙婆婆', location: '村长家'})
+
+// 建立女儿村与所有NPC的"包含"关系
+CREATE (nec)-[:包含]->(npc1)
+CREATE (nec)-[:包含]->(npc2)
+CREATE (nec)-[:包含]->(npc3)
+CREATE (nec)-[:包含]->(npc4)
+CREATE (nec)-[:包含]->(npc5)
+CREATE (nec)-[:包含]->(npc6)

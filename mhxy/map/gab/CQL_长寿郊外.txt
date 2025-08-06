@@ -1,0 +1,23 @@
+// 创建长寿郊外节点
+CREATE (csjw:Location {name: '长寿郊外'})
+
+// 创建连接的地点节点
+CREATE (csc:Location {name: '长寿村'})
+CREATE (tg:Location {name: '天宫'})
+CREATE (bjlz:Location {name: '北俱芦洲'})
+CREATE (dtjw:Location {name: '大唐境外'})
+
+// 连接长寿郊外到其他地点
+CREATE (csjw)-[:连接]->(csc)
+CREATE (csjw)-[:连接]->(tg)
+CREATE (csjw)-[:连接]->(bjlz)
+CREATE (csjw)-[:连接]->(dtjw)
+
+// 创建 NPC 节点并与长寿郊外连接
+CREATE (npc1:NPC {name: '驿站老板', location: '60,67'})-[:位于]->(csjw)
+CREATE (npc2:NPC {name: '西牛贺州土地', location: '96,12'})-[:位于]->(csjw)
+CREATE (npc3:NPC {name: '天将', location: '21,58'})-[:位于]->(csjw)
+CREATE (npc4:NPC {name: '鬼谷道士', location: '182,14'})-[:位于]->(csjw)
+CREATE (npc5:NPC {name: '铁扇公主', location: '180,60'})-[:位于]->(csjw)
+CREATE (npc6:NPC {name: '路人甲', location: '44,130'})-[:位于]->(csjw)
+CREATE (npc7:NPC {name: '驼背大鼋', location: '88,83'})-[:位于]->(csjw)

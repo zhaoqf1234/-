@@ -1,0 +1,137 @@
+// 创建主节点 - 建邺城
+MERGE (jyc:Location {name: '建邺城'})
+
+// 创建连接的两个地点节点
+MERGE (jn:Location {name: '江南野外'})
+MERGE (dhw:Location {name: '东海湾'})
+
+// 建立连接关系
+CREATE (jyc)-[:连接]->(jn)
+CREATE (jyc)-[:连接]->(dhw)
+
+// 创建所有NPC节点并建立包含关系
+CREATE (npc1:NPC {name: '宠物仙子', location: '63,115'})
+CREATE (jyc)-[:包含]->(npc1)
+
+CREATE (npc2:NPC {name: '陈长寿', location: '219,123'})
+CREATE (jyc)-[:包含]->(npc2)
+
+CREATE (npc3:NPC {name: '超级巫医', location: '211,98'})
+CREATE (jyc)-[:包含]->(npc3)
+
+CREATE (npc4:NPC {name: '超级巫医', location: '104,55'})
+CREATE (jyc)-[:包含]->(npc4)
+
+CREATE (npc5:NPC {name: '装备收购商', location: '243,118'})
+CREATE (jyc)-[:包含]->(npc5)
+
+CREATE (npc6:NPC {name: '装备鉴定人', location: '250,115'})
+CREATE (jyc)-[:包含]->(npc6)
+
+CREATE (npc7:NPC {name: '海产收购商', location: '231,130'})
+CREATE (jyc)-[:包含]->(npc7)
+
+CREATE (npc8:NPC {name: '技能指导师', location: '72,82'})
+CREATE (jyc)-[:包含]->(npc8)
+
+CREATE (npc9:NPC {name: '吹牛王', location: '90,111'})
+CREATE (jyc)-[:包含]->(npc9)
+
+CREATE (npc10:NPC {name: '迎客僧', location: '8,55'})
+CREATE (jyc)-[:包含]->(npc10)
+
+CREATE (npc11:NPC {name: '戏班老板', location: '86,114'})
+CREATE (jyc)-[:包含]->(npc11)
+
+CREATE (npc12:NPC {name: '赵元宝', location: '228,64'})
+CREATE (jyc)-[:包含]->(npc12)
+
+CREATE (npc13:NPC {name: '雷黑子', location: '73,10'})
+CREATE (jyc)-[:包含]->(npc13)
+
+CREATE (npc14:NPC {name: '罗招弟', location: '220,116'})
+CREATE (jyc)-[:包含]->(npc14)
+
+CREATE (npc15:NPC {name: '小花', location: '207,36'})
+CREATE (jyc)-[:包含]->(npc15)
+
+CREATE (npc16:NPC {name: '刘老爹', location: '37,27'})
+CREATE (jyc)-[:包含]->(npc16)
+
+CREATE (npc17:NPC {name: '教书先生', location: '78,89'})
+CREATE (jyc)-[:包含]->(npc17)
+
+CREATE (npc18:NPC {name: '符全', location: '19,91'})
+CREATE (jyc)-[:包含]->(npc18)
+
+CREATE (npc19:NPC {name: '赵捕头', location: '117,71'})
+CREATE (jyc)-[:包含]->(npc19)
+
+CREATE (npc20:NPC {name: '老胡', location: '51,30'})
+CREATE (jyc)-[:包含]->(npc20)
+
+CREATE (npc21:NPC {name: '飞儿', location: '105,106'})
+CREATE (jyc)-[:包含]->(npc21)
+
+CREATE (npc22:NPC {name: '老孙头', location: '223,132'})
+CREATE (jyc)-[:包含]->(npc22)
+
+CREATE (npc23:NPC {name: '牛大胆', location: '230,109'})
+CREATE (jyc)-[:包含]->(npc23)
+
+CREATE (npc24:NPC {name: '王大嫂', location: '141,132'})
+CREATE (jyc)-[:包含]->(npc24)
+
+CREATE (npc25:NPC {name: '管家', location: '32,86'})
+CREATE (jyc)-[:包含]->(npc25)
+
+CREATE (npc26:NPC {name: '马全有', location: '52,49'})
+CREATE (jyc)-[:包含]->(npc26)
+
+CREATE (npc27:NPC {name: '建邺守卫', location: '12,7'})
+CREATE (jyc)-[:包含]->(npc27)
+
+CREATE (npc28:NPC {name: '勾魂马面', location: '283,75'})
+CREATE (jyc)-[:包含]->(npc28)
+
+CREATE (npc29:NPC {name: '张来福', location: '87,73'})
+CREATE (jyc)-[:包含]->(npc29)
+
+CREATE (npc30:NPC {name: '推广登记员', location: '10,77'})
+CREATE (jyc)-[:包含]->(npc30)
+
+CREATE (npc31:NPC {name: '武器店掌柜', location: '兵铁铺'})
+CREATE (jyc)-[:包含]->(npc31)
+
+CREATE (npc32:NPC {name: '武器店老板', location: '兵铁铺'})
+CREATE (jyc)-[:包含]->(npc32)
+
+CREATE (npc33:NPC {name: '服装店老板', location: '张记布庄分店'})
+CREATE (jyc)-[:包含]->(npc33)
+
+CREATE (npc34:NPC {name: '药店老板', location: '回春堂'})
+CREATE (jyc)-[:包含]->(npc34)
+
+CREATE (npc35:NPC {name: '货栈老板', location: '东升货栈'})
+CREATE (jyc)-[:包含]->(npc35)
+
+CREATE (npc36:NPC {name: '当铺老板', location: '合生记当铺'})
+CREATE (jyc)-[:包含]->(npc36)
+
+CREATE (npc37:NPC {name: '钱庄老板', location: '万字钱庄'})
+CREATE (jyc)-[:包含]->(npc37)
+
+CREATE (npc38:NPC {name: '李善人', location: '民居内室'})
+CREATE (jyc)-[:包含]->(npc38)
+
+CREATE (npc39:NPC {name: '周猎户', location: '建邺民居'})
+CREATE (jyc)-[:包含]->(npc39)
+
+CREATE (npc40:NPC {name: '建邺县令', location: '建邺衙门'})
+CREATE (jyc)-[:包含]->(npc40)
+
+CREATE (npc41:NPC {name: '简师爷', location: '建邺衙门'})
+CREATE (jyc)-[:包含]->(npc41)
+
+CREATE (npc42:NPC {name: '衙役', location: '建邺衙门'})
+CREATE (jyc)-[:包含]->(npc42)

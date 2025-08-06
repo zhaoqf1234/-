@@ -1,0 +1,11 @@
+// 1. 查找两个傲来国节点
+MATCH (a:Location {name: '东海湾'}), (b:Location {name: '东海湾'})
+WHERE id(a) <> id(b)  // 确保两个节点不同
+
+// 2. 合并它们的所有关系
+WITH a, b
+MATCH (b)-[r]->(x)
+MERGE (a)-[r2:连接]->(x)  // 根据实际关系类型修改 rel_type
+
+// 3. 删除重复的节点 b 及其所有关系
+DETACH DELETE b

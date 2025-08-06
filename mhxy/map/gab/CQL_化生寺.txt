@@ -1,0 +1,32 @@
+// 创建化生寺节点
+CREATE (hss:Location {name: '化生寺'})
+
+// 创建长安城节点
+CREATE (cca:Location {name: '长安城'})
+
+// 连接化生寺到长安城
+CREATE (hss)-[:连接]->(cca)
+
+// 创建 NPC 节点并与化生寺连接
+CREATE (npc1:NPC {name: '空慈方丈', location: '118,80'})
+CREATE (npc2:NPC {name: '空善大师', location: '58,9'})
+CREATE (npc3:NPC {name: '接引僧', location: '63,28'})
+CREATE (npc4:NPC {name: '慧海', location: '47,36'})
+CREATE (npc5:NPC {name: '慧静', location: '115,51'})
+CREATE (npc6:NPC {name: '慧悲', location: '16,46'})
+CREATE (npc7:NPC {name: '疥癞和尚', location: '32,15'})
+CREATE (npc8:NPC {name: '慧明', location: '大雄宝殿'})
+CREATE (npc9:NPC {name: '法明长老', location: '大雄宝殿'})
+CREATE (npc10:NPC {name: '空度禅师', location: '藏经阁'})
+
+// 将NPC与化生寺建立包含关系
+CREATE (hss)-[:包含]->(npc1)
+CREATE (hss)-[:包含]->(npc2)
+CREATE (hss)-[:包含]->(npc3)
+CREATE (hss)-[:包含]->(npc4)
+CREATE (hss)-[:包含]->(npc5)
+CREATE (hss)-[:包含]->(npc6)
+CREATE (hss)-[:包含]->(npc7)
+CREATE (hss)-[:包含]->(npc8)
+CREATE (hss)-[:包含]->(npc9)
+CREATE (hss)-[:包含]->(npc10)

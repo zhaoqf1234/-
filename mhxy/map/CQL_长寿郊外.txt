@@ -1,0 +1,32 @@
+// 创建或合并"长寿郊外"节点
+MERGE (csjw:Location {name: '长寿郊外'})
+
+// 创建或合并连接的四个地点节点
+MERGE (csc:Location {name: '长寿村'})
+MERGE (tg:Location {name: '天宫'})
+MERGE (bjlz:Location {name: '北俱芦洲'})
+MERGE (dtjw:Location {name: '大唐境外'})
+
+// 建立"长寿郊外"到四个地点的连接关系
+CREATE (csjw)-[:连接]->(csc)
+CREATE (csjw)-[:连接]->(tg)
+CREATE (csjw)-[:连接]->(bjlz)
+CREATE (csjw)-[:连接]->(dtjw)
+
+// 创建NPC节点并与"长寿郊外"建立包含关系
+CREATE (npc1:NPC {name: '驿站老板', location: '60,67'})
+CREATE (npc2:NPC {name: '西牛贺州土地', location: '96,12'})
+CREATE (npc3:NPC {name: '天将', location: '21,58'})
+CREATE (npc4:NPC {name: '鬼谷道士', location: '182,14'})
+CREATE (npc5:NPC {name: '铁扇公主', location: '180,60'})
+CREATE (npc6:NPC {name: '路人甲', location: '44,130'})
+CREATE (npc7:NPC {name: '驼背大鼋', location: '88,83'})
+
+// 建立"长寿郊外"与所有NPC的包含关系
+CREATE (csjw)-[:包含]->(npc1)
+CREATE (csjw)-[:包含]->(npc2)
+CREATE (csjw)-[:包含]->(npc3)
+CREATE (csjw)-[:包含]->(npc4)
+CREATE (csjw)-[:包含]->(npc5)
+CREATE (csjw)-[:包含]->(npc6)
+CREATE (csjw)-[:包含]->(npc7)

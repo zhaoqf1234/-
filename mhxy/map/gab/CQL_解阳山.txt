@@ -1,0 +1,22 @@
+// 创建解阳山节点
+CREATE (jys:Location {name: '解阳山'})
+
+// 创建子母河节点
+CREATE (zmh:Location {name: '子母河'})
+
+// 连接解阳山到子母河
+CREATE (jys)-[:连接]->(zmh)
+
+// 创建NPC节点并与解阳山连接
+CREATE (npc1:NPC {name: '路人老婆婆', location: '55,8'})
+CREATE (npc2:NPC {name: '守门道人', location: '52,81'})
+CREATE (npc3:NPC {name: '守泉道人', location: '107,69'})
+CREATE (npc4:NPC {name: '超级巫医', location: '56,53'})
+CREATE (npc5:NPC {name: '后院机关兽', location: '45,91'})
+
+// 将NPC与解阳山建立包含关系
+CREATE (jys)-[:包含]->(npc1)
+CREATE (jys)-[:包含]->(npc2)
+CREATE (jys)-[:包含]->(npc3)
+CREATE (jys)-[:包含]->(npc4)
+CREATE (jys)-[:包含]->(npc5)

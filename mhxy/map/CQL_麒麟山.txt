@@ -1,0 +1,18 @@
+// 使用 MERGE 检查并创建 "麒麟山" 节点，如果不存在则创建
+MERGE (qls:Location {name: '麒麟山'})
+
+// 使用 MERGE 检查并创建 "朱紫国" 节点，如果不存在则创建
+MERGE (zzg:Location {name: '朱紫国'})
+
+// 连接麒麟山到朱紫国
+CREATE (qls)-[:连接]->(zzg)
+
+// 创建 NPC 节点并与麒麟山连接
+CREATE (npc1:NPC {name: '有来有去', location: '111,109'})
+CREATE (npc2:NPC {name: '布识陆', location: '168,84'})
+CREATE (npc3:NPC {name: '超级巫医', location: '99,62'})
+
+// 建立麒麟山与所有NPC的"包含"关系
+CREATE (qls)-[:包含]->(npc1)
+CREATE (qls)-[:包含]->(npc2)
+CREATE (qls)-[:包含]->(npc3)

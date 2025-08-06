@@ -1,0 +1,24 @@
+// 使用 MERGE 检查并创建 "狮驼岭" 节点，如果不存在则创建
+MERGE (stl:Location {name: '狮驼岭'})
+
+// 使用 MERGE 检查并创建 "大唐境外" 节点，如果不存在则创建
+MERGE (dtjw:Location {name: '大唐境外'})
+
+// 连接狮驼岭到大唐境外
+CREATE (stl)-[:连接]->(dtjw)
+
+// 创建 NPC 节点并与狮驼岭连接
+CREATE (npc1:NPC {name: '传送妖精', location: '112,27'})
+CREATE (npc2:NPC {name: '守山小妖', location: '112,92'})
+CREATE (npc3:NPC {name: '守山小妖', location: '119,86'})
+CREATE (npc4:NPC {name: '大大王', location: '狮王洞'})
+CREATE (npc5:NPC {name: '二大王', location: '大象洞'})
+CREATE (npc6:NPC {name: '三大王', location: '老雕洞'})
+
+// 建立狮驼岭与所有NPC的"包含"关系
+CREATE (stl)-[:包含]->(npc1)
+CREATE (stl)-[:包含]->(npc2)
+CREATE (stl)-[:包含]->(npc3)
+CREATE (stl)-[:包含]->(npc4)
+CREATE (stl)-[:包含]->(npc5)
+CREATE (stl)-[:包含]->(npc6)

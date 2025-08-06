@@ -1,0 +1,44 @@
+// 创建龙宫节点
+CREATE (lg:Location {name: '龙宫'})
+
+// 创建连接的地图节点
+CREATE (dhw:Location {name: '东海湾'})
+CREATE (hdmj:Location {name: '海底迷宫'})
+
+// 连接龙宫到东海湾和海底迷宫
+CREATE (lg)-[:连接]->(dhw)
+CREATE (lg)-[:连接]->(hdmj)
+
+// 创建NPC节点并与龙宫连接
+CREATE (npc1:NPC {name: '龙宫传送人', location: '113,55'})
+CREATE (npc2:NPC {name: '万圣公主', location: '20,64'})
+CREATE (npc3:NPC {name: '蛤蟆头领', location: '148,57'})
+CREATE (npc4:NPC {name: '小龙女', location: '97,72'})
+CREATE (npc5:NPC {name: '龟太尉', location: '53,98'})
+CREATE (npc6:NPC {name: '龟千岁', location: '98,58'})
+CREATE (npc7:NPC {name: '虾将军', location: '195,28'})
+CREATE (npc8:NPC {name: '蟹将军', location: '32,16'})
+CREATE (npc9:NPC {name: '蛤蟆勇士', location: '196,99'})
+CREATE (npc10:NPC {name: '东海龙王', location: '水晶宫'})
+CREATE (npc11:NPC {name: '海夜叉', location: '海底迷宫2(24,20)'})
+CREATE (npc12:NPC {name: '超级巫医', location: '海底迷宫2(37,31)'})
+CREATE (npc13:NPC {name: '风波神', location: '海底迷宫3(35,15)'})
+CREATE (npc14:NPC {name: '虾兵', location: '海底迷宫4(36,37)'})
+CREATE (npc15:NPC {name: '小白龙', location: '海底迷宫5(54,38)'})
+
+// 将NPC与龙宫建立关系
+CREATE (lg)-[:包含]->(npc1)
+CREATE (lg)-[:包含]->(npc2)
+CREATE (lg)-[:包含]->(npc3)
+CREATE (lg)-[:包含]->(npc4)
+CREATE (lg)-[:包含]->(npc5)
+CREATE (lg)-[:包含]->(npc6)
+CREATE (lg)-[:包含]->(npc7)
+CREATE (lg)-[:包含]->(npc8)
+CREATE (lg)-[:包含]->(npc9)
+CREATE (lg)-[:包含]->(npc10)
+CREATE (lg)-[:包含]->(npc11)
+CREATE (lg)-[:包含]->(npc12)
+CREATE (lg)-[:包含]->(npc13)
+CREATE (lg)-[:包含]->(npc14)
+CREATE (lg)-[:包含]->(npc15)

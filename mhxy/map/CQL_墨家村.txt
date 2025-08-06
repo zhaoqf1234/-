@@ -1,0 +1,28 @@
+// 创建墨家村节点
+MERGE (mjc:Location {name: '墨家村'})
+
+// 创建连接的两个地点节点
+MERGE (dtjw:Location {name: '大唐境外'})
+MERGE (mjjd:Location {name: '墨家禁地'})
+
+// 连接墨家村到大唐境外和墨家禁地
+CREATE (mjc)-[:连接]->(dtjw)
+CREATE (mjc)-[:连接]->(mjjd)
+
+// 创建NPC节点并与墨家村连接
+CREATE (npc1:NPC {name: '巨子', location: '34，152'})
+CREATE (npc2:NPC {name: '马待封', location: '23，33'})
+CREATE (npc3:NPC {name: '小笛', location: '75，34'})
+CREATE (npc4:NPC {name: '莫夫人', location: '74，80'})
+CREATE (npc5:NPC {name: '尹孝乾', location: '17，67'})
+CREATE (npc6:NPC {name: '尹孝坤', location: '17，108'})
+CREATE (npc7:NPC {name: '莫爷爷', location: '37，109'})
+
+// 建立墨家村与所有NPC的"包含"关系
+CREATE (mjc)-[:包含]->(npc1)
+CREATE (mjc)-[:包含]->(npc2)
+CREATE (mjc)-[:包含]->(npc3)
+CREATE (mjc)-[:包含]->(npc4)
+CREATE (mjc)-[:包含]->(npc5)
+CREATE (mjc)-[:包含]->(npc6)
+CREATE (mjc)-[:包含]->(npc7)

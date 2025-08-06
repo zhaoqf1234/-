@@ -1,0 +1,22 @@
+// 使用 MERGE 检查并创建 "魔王寨" 节点，如果不存在则创建
+MERGE (mwz:Location {name: '魔王寨'})
+
+// 使用 MERGE 检查并创建 "大唐境外" 节点，如果不存在则创建
+MERGE (dtjw:Location {name: '大唐境外'})
+
+// 连接魔王寨到大唐境外
+CREATE (mwz)-[:连接]->(dtjw)
+
+// 创建 NPC 节点并与魔王寨连接
+CREATE (npc1:NPC {name: '守门牛妖', location: '28,26'})
+CREATE (npc2:NPC {name: '守门牛妖', location: '38,21'})
+CREATE (npc3:NPC {name: '引路小妖', location: '87,72'})
+CREATE (npc4:NPC {name: '牛魔王', location: '魔王居室'})
+CREATE (npc5:NPC {name: '九头精怪', location: '魔王居室'})
+
+// 建立魔王寨与所有NPC的"包含"关系
+CREATE (mwz)-[:包含]->(npc1)
+CREATE (mwz)-[:包含]->(npc2)
+CREATE (mwz)-[:包含]->(npc3)
+CREATE (mwz)-[:包含]->(npc4)
+CREATE (mwz)-[:包含]->(npc5)

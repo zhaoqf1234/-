@@ -1,0 +1,22 @@
+// 使用 MERGE 检查并创建 "方寸山" 节点，如果不存在则创建
+MERGE (fcs:Location {name: '方寸山'})
+
+// 使用 MERGE 检查并创建 "长寿村" 节点，如果不存在则创建
+MERGE (csc:Location {name: '长寿村'})
+
+// 连接方寸山到长寿村
+CREATE (fcs)-[:连接]->(csc)
+
+// 创建 NPC 节点并与方寸山连接
+CREATE (npc1:NPC {name: '接引道童', location: '120，136'})
+CREATE (npc2:NPC {name: '觉明', location: '65，46'})
+CREATE (npc3:NPC {name: '觉岸', location: '111，124'})
+CREATE (npc4:NPC {name: '灵儿', location: '34，95'})
+CREATE (npc5:NPC {name: '菩提祖师', location: '方寸大殿'})
+
+// 建立方寸山与所有NPC的"包含"关系
+CREATE (fcs)-[:包含]->(npc1)
+CREATE (fcs)-[:包含]->(npc2)
+CREATE (fcs)-[:包含]->(npc3)
+CREATE (fcs)-[:包含]->(npc4)
+CREATE (fcs)-[:包含]->(npc5)

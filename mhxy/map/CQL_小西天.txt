@@ -1,0 +1,18 @@
+// 使用 MERGE 检查并创建 "小西天" 节点，如果不存在则创建
+MERGE (xt:Location {name: '小西天'})
+
+// 使用 MERGE 检查并创建 "大唐境外" 节点，如果不存在则创建
+MERGE (djw:Location {name: '大唐境外'})
+
+// 连接小西天到大唐境外
+CREATE (xt)-[:连接]->(djw)
+
+// 创建 NPC 节点并与小西天连接
+CREATE (npc1:NPC {name: '守门金刚', location: '28,206'})
+CREATE (npc2:NPC {name: '守门金刚', location: '41,214'})
+CREATE (npc3:NPC {name: '灵山老僧', location: '62,16'})
+
+// 建立小西天与所有NPC的"包含"关系
+CREATE (xt)-[:包含]->(npc1)
+CREATE (xt)-[:包含]->(npc2)
+CREATE (xt)-[:包含]->(npc3)

@@ -1,0 +1,18 @@
+// 创建小西天节点
+CREATE (xxt:Location {name: '小西天'})
+
+// 创建大唐境外节点
+CREATE (dtjw:Location {name: '大唐境外'})
+
+// 连接小西天到大唐境外
+CREATE (xxt)-[:连接]->(dtjw)
+
+// 创建 NPC 节点并与小西天连接
+CREATE (npc1:NPC {name: '守门金刚', location: '28,206'})
+CREATE (npc2:NPC {name: '守门金刚', location: '41,214'})
+CREATE (npc3:NPC {name: '灵山老僧', location: '62,16'})
+
+// 将NPC与小西天建立包含关系
+CREATE (xxt)-[:包含]->(npc1)
+CREATE (xxt)-[:包含]->(npc2)
+CREATE (xxt)-[:包含]->(npc3)

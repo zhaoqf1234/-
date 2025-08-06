@@ -1,0 +1,26 @@
+// 创建或匹配"普陀山"节点
+MERGE (pts:Location {name: '普陀山'})
+
+// 创建或匹配"大唐国境"节点
+MERGE (dtgj:Location {name: '大唐国境'})
+
+// 连接普陀山到大唐国境
+CREATE (pts)-[:连接]->(dtgj)
+
+// 创建NPC节点并与普陀山建立包含关系
+CREATE (npc1:NPC {name: '引路仙女', location: '18,51'})
+CREATE (npc2:NPC {name: '黑熊怪', location: '28,27'})
+CREATE (npc3:NPC {name: '龙女宝宝', location: '15,39'})
+CREATE (npc4:NPC {name: '接引仙女', location: '80,9'})
+CREATE (npc5:NPC {name: '小熊怪', location: '60,65'})
+CREATE (npc6:NPC {name: '观音姐姐', location: '潮音洞'})
+CREATE (npc7:NPC {name: '青莲仙女', location: '潮音洞'})
+
+// 建立普陀山与所有NPC的"包含"关系
+CREATE (pts)-[:包含]->(npc1)
+CREATE (pts)-[:包含]->(npc2)
+CREATE (pts)-[:包含]->(npc3)
+CREATE (pts)-[:包含]->(npc4)
+CREATE (pts)-[:包含]->(npc5)
+CREATE (pts)-[:包含]->(npc6)
+CREATE (pts)-[:包含]->(npc7)

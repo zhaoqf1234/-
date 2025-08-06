@@ -1,0 +1,18 @@
+// 创建墨家禁地节点
+CREATE (mjjd:Location {name: '墨家禁地'})
+
+// 创建墨家村节点
+CREATE (mjc:Location {name: '墨家村'})
+
+// 连接墨家禁地到墨家村
+CREATE (mjjd)-[:连接]->(mjc)
+
+// 创建 NPC 节点并与墨家禁地连接
+CREATE (npc1:NPC {name: '机关人', location: '15,99'})
+CREATE (npc2:NPC {name: '巡逻的机关人', location: '随机移动'})
+CREATE (npc3:NPC {name: '超级巫医', location: '131,69'})
+
+// 将NPC与墨家禁地建立包含关系
+CREATE (mjjd)-[:包含]->(npc1)
+CREATE (mjjd)-[:包含]->(npc2)
+CREATE (mjjd)-[:包含]->(npc3)

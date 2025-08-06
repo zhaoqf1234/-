@@ -1,0 +1,18 @@
+// 创建五庄观节点
+MERGE (wzg:Location {name: '五庄观'})
+
+// 创建大唐境外节点并连接
+MERGE (dtjw:Location {name: '大唐境外'})
+CREATE (wzg)-[:连接]->(dtjw)
+
+// 创建NPC节点并与五庄观建立包含关系
+CREATE (npc1:NPC {name: '接引道人', location: '57,31'})
+CREATE (npc2:NPC {name: '清风', location: '56,38'})
+CREATE (npc3:NPC {name: '明月', location: '60,36'})
+CREATE (npc4:NPC {name: '镇元大仙', location: '乾坤殿'})
+
+// 建立五庄观与所有NPC的包含关系
+CREATE (wzg)-[:包含]->(npc1)
+CREATE (wzg)-[:包含]->(npc2)
+CREATE (wzg)-[:包含]->(npc3)
+CREATE (wzg)-[:包含]->(npc4)

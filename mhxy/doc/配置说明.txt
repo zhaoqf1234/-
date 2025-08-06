@@ -1,0 +1,27 @@
+
+
+操作系统：
+　　 Microsoft Windows 98/ME/2000/XP/vista/7/8/10 简体中文版
+　　 MAC系统
+推荐系统：
+　　 Microsoft Windows /2000/XP/vista/7/8/10 简体中文版
+　　 MAC系统
+最低配置：
+　　 CPU P4-1.6G
+　　 512M内存
+　　 64K调制解调器
+　　 2G硬盘空间
+　　 分辨率16bit 800×600
+　　 鼠标、键盘
+推荐配置：
+　　 128K/bps以上的上网环境
+　　 CPU P4-3G 以上
+　　 1G 内存以上
+　　 4G以上硬盘空间
+　　 分辨率16bit 800×600
+　　 支持DX9.0C 64M显存独立显卡
+　　 支持 DirectSound声卡
+　　 鼠标、键盘
+
+
+MHBB-9999-9999-9999

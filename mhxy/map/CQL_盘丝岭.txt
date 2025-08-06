@@ -1,0 +1,28 @@
+// 使用 MERGE 检查并创建 "盘丝岭" 节点，如果不存在则创建
+MERGE (psl:Location {name: '盘丝岭'})
+
+// 使用 MERGE 检查并创建 "大唐境外" 节点，如果不存在则创建
+MERGE (dtjw:Location {name: '大唐境外'})
+
+// 连接盘丝岭到大唐境外
+CREATE (psl)-[:连接]->(dtjw)
+
+// 创建 NPC 节点并与盘丝岭连接
+CREATE (npc1:NPC {name: '引路小妖', location: '180，132'})
+CREATE (npc2:NPC {name: '看门小妖', location: '173，123'})
+CREATE (npc3:NPC {name: '看门小妖', location: '185，116'})
+CREATE (npc4:NPC {name: '女妖', location: '111，49'})
+CREATE (npc5:NPC {name: '金琉璃', location: '73，75'})
+CREATE (npc6:NPC {name: '栗栗儿', location: '77，73'})
+CREATE (npc7:NPC {name: '春十三娘', location: '盘丝洞(20，18)'})
+CREATE (npc8:NPC {name: '晶晶姑娘', location: '盘丝洞(25，44)'})
+
+// 建立盘丝岭与所有NPC的"包含"关系
+CREATE (psl)-[:包含]->(npc1)
+CREATE (psl)-[:包含]->(npc2)
+CREATE (psl)-[:包含]->(npc3)
+CREATE (psl)-[:包含]->(npc4)
+CREATE (psl)-[:包含]->(npc5)
+CREATE (psl)-[:包含]->(npc6)
+CREATE (psl)-[:包含]->(npc7)
+CREATE (psl)-[:包含]->(npc8)

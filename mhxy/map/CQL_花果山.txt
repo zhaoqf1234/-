@@ -1,0 +1,22 @@
+// 创建花果山节点
+MERGE (hgs:Location {name: '花果山'})
+
+// 创建北俱芦洲节点并建立连接关系
+MERGE (bjlz:Location {name: '北俱芦洲'})
+CREATE (hgs)-[:连接]->(bjlz)
+
+// 创建NPC节点并与花果山建立包含关系
+CREATE (npc1:NPC {name: '花果山土地', location: '28,98'})
+CREATE (npc2:NPC {name: '老马猴', location: '37,45'})
+CREATE (npc3:NPC {name: '侯医仙', location: '133,78'})
+CREATE (npc4:NPC {name: '马猴', location: '100,5'})
+CREATE (npc5:NPC {name: '美猴王', location: '78,110'})
+CREATE (npc6:NPC {name: '孙悟空', location: '水帘洞'})
+
+// 建立花果山与所有NPC的包含关系
+CREATE (hgs)-[:包含]->(npc1)
+CREATE (hgs)-[:包含]->(npc2)
+CREATE (hgs)-[:包含]->(npc3)
+CREATE (hgs)-[:包含]->(npc4)
+CREATE (hgs)-[:包含]->(npc5)
+CREATE (hgs)-[:包含]->(npc6)

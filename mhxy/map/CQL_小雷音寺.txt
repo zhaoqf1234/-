@@ -1,0 +1,22 @@
+// 创建小雷音寺节点
+MERGE (xlxs:Location {name: '小雷音寺'})
+
+// 创建小西天节点并连接
+MERGE (xxt:Location {name: '小西天'})
+CREATE (xlxs)-[:连接]->(xxt)
+
+// 创建NPC节点并与小雷音寺建立包含关系
+CREATE (npc1:NPC {name: '阿傩', location: '62,98'})
+CREATE (npc2:NPC {name: '迦叶', location: '80,109'})
+CREATE (npc3:NPC {name: '护法罗汉', location: '134,33'})
+CREATE (npc4:NPC {name: '护法罗汉', location: '152,41'})
+CREATE (npc5:NPC {name: '护法金刚', location: '150,16'})
+CREATE (npc6:NPC {name: '护法金刚', location: '169,25'})
+
+// 建立小雷音寺与所有NPC的包含关系
+CREATE (xlxs)-[:包含]->(npc1)
+CREATE (xlxs)-[:包含]->(npc2)
+CREATE (xlxs)-[:包含]->(npc3)
+CREATE (xlxs)-[:包含]->(npc4)
+CREATE (xlxs)-[:包含]->(npc5)
+CREATE (xlxs)-[:包含]->(npc6)

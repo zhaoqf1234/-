@@ -1,0 +1,34 @@
+// 创建盘丝岭节点
+CREATE (psl:Location {name: '盘丝岭'})
+
+// 创建大唐境外节点
+CREATE (dtjw:Location {name: '大唐境外'})
+
+// 连接盘丝岭到大唐境外
+CREATE (psl)-[:连接]->(dtjw)
+
+// 创建NPC节点并与盘丝岭连接
+CREATE (npc1:NPC {name: '引路小妖', location: '180,132'})
+CREATE (npc2:NPC {name: '看门小妖', location: '173,123'})
+CREATE (npc3:NPC {name: '看门小妖', location: '185,116'})
+CREATE (npc4:NPC {name: '女妖', location: '111,49'})
+CREATE (npc5:NPC {name: '金琉璃', location: '73,75'})
+CREATE (npc6:NPC {name: '栗栗儿', location: '77,73'})
+CREATE (npc7:NPC {name: '春十三娘', location: '盘丝洞(20,18)'})
+CREATE (npc8:NPC {name: '晶晶姑娘', location: '盘丝洞(25,44)'})
+
+// 创建盘丝洞节点（作为子地点）
+CREATE (psd:Location {name: '盘丝洞', parent: '盘丝岭'})
+
+// 连接NPC到盘丝岭或盘丝洞
+CREATE (npc1)-[:位于]->(psl)
+CREATE (npc2)-[:位于]->(psl)
+CREATE (npc3)-[:位于]->(psl)
+CREATE (npc4)-[:位于]->(psl)
+CREATE (npc5)-[:位于]->(psl)
+CREATE (npc6)-[:位于]->(psl)
+CREATE (npc7)-[:位于]->(psd)
+CREATE (npc8)-[:位于]->(psd)
+
+// 连接盘丝岭和盘丝洞
+CREATE (psl)-[:包含]->(psd)
