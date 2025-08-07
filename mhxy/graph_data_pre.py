@@ -57,5 +57,3 @@ CREATE (npc4:NPC {name: '超级巫医', location: '104,55'})
 
 
 
-os.environ['DEEPSEEK_API_KEY'] = 'sk-9cbd8b29dc614faf8f083c538771ef1d'
-
